@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="MoteurRecherche.index" %>
-<!-- moteur de recherche -->
+<!-- moteur de recherche version 1.0-->
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
