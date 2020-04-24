@@ -16,6 +16,7 @@ namespace MoteurRecherche
             if(!IsCallback)
             {
                 GrdTable.Visible = false;
+                /*something*/
             }
         }
         private void Afficher()
