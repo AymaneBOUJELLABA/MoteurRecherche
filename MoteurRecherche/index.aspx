@@ -24,28 +24,18 @@
                     </div>
                 </div>
                 <div class="Gridtable">
-                        <asp:GridView ID="GrdTable" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" DataKeyNames="IdMot" DataSourceID="SqlDataSource1" CssClass="auto-style1">
-                            <AlternatingRowStyle BackColor="White" />
-                            <Columns>
-                                <asp:BoundField DataField="IdMot" HeaderText="IdMot" InsertVisible="False" ReadOnly="True" SortExpression="IdMot" />
-                                <asp:BoundField DataField="Text" HeaderText="Text" SortExpression="Text" />
-                            </Columns>
-                            <EditRowStyle BackColor="#2461BF" />
-                            <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                            <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                            <RowStyle BackColor="#EFF3FB" />
-                            <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                            <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                            <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                            <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                            <SortedDescendingHeaderStyle BackColor="#4870BE" />
+                        <asp:GridView ID="GrdTable" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                            <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                            <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                            <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                            <RowStyle BackColor="White" ForeColor="#003399" />
+                            <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                            <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                            <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                            <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                            <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:RechercheDatabaseConnectionString %>" SelectCommand="SELECT * FROM [Mot] WHERE ([Text] = @Text)" OnSelecting="SqlDataSource1_Selecting">
-                            <SelectParameters>
-                                <asp:SessionParameter Name="Text" SessionField="Mot" Type="String" />
-                            </SelectParameters>
-                        </asp:SqlDataSource>
+                        <asp:Label ID="lab" runat="server" Text="Label"></asp:Label>
                 </div>
             </ContentTemplate>
        </asp:UpdatePanel>

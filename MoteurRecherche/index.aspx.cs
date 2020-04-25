@@ -13,27 +13,36 @@ namespace MoteurRecherche
         dbDataContext db = new dbDataContext();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsCallback)
-            {
-                GrdTable.Visible = false;
-                /*something*/
-            }
+            if (Page.IsPostBack) return;
+            GrdTable.DataSource = db.Mots;
+            GrdTable.DataBind();
         }
-        private void Afficher()
-        {
-            GrdTable.Visible = true;
-        }
+        
         protected void BtnSrch_Click(object sender, EventArgs e)
         {
-            //saves the searched word in session data
-            Session["Mot"] = InputMot.Value;
-            Afficher();
+
+            String mots = InputMot.Value;
+            Mots m = db.Mots.FirstOrDefault(a => a.text == mots);
+            if (m != null)
+            {
+                lab.Text = mots;
+                lab.Visible = true;
+
+            }
+            else
+            {
+                Mots mo = new Mots();
+                mo.text = mots;
+                db.Mots.InsertOnSubmit(mo);
+                db.SubmitChanges();
+
+
+                GrdTable.DataSource = db.Mots;
+                GrdTable.DataBind();
+            }
+           
 
         }
 
-        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
     }
 }
